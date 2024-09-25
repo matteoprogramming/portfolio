@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Matteo Bernardi</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/icons/page/mb.ico">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+  emailjs.init('3pClEjDYxHZSODaIW')
+</script>
+    </head>
+    <body onload="init()">
+        <header class="header">
+            <a href="#home" class="logo">
+                matteo<span>bernardi</span>
+            </a>
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="home" id="home">
+            <div class="home-container">
+                <div class="home-content">
+                    <div class="home-img">
+                        <img src="img/images/profile/image.jpg" alt>
+                    </div>
+                    <div>
+                        <h1>Hi, I'm <span>Matteo</span></h1>
+                        <h3 class="text-animation">I'm <span></span></h3>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://github.com/matteoprogramming">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/matteo-bernardi-501a5b306/">
+                            <i class="bx bxl-linkedin-square"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Matteo_Bernardi">
+                            <i class="bx bxl-youtube"></i>
+                        </a>
+                        <a href="https://instagram.com/matteobernardiofficial">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="btn-group">
+                        <a href="#about" class="btn">About me</a>
+                        <a href="#contact" class="btn">Contact</a>
+                    </div>
+                </div>
+
+                <div class="canvas-container">
+                    <div>
+                        <h1 id="sketchpad_heading_1">Try my <span
+                                style="color: white; white-space: nowrap;">DIGIT
+                                AI</span></h1>
+                        <p id="sketchpad_heading_2">Test my <span
+                                style="color: inherit; white-space: nowrap;">DIGIT
+                                AI</span> by writing a number from 0 to 9</p>
+                    </div>
+                    <canvas id="sketchpad" width="280" height="280"></canvas>
+                    <div class="btn-group">
+                        <button type="btn" class="btn"
+                            id="predict_button">Predict</button>
+                        <button type="btn" class="btn"
+                            id="clear_button">Clear</button>
+                    </div>
+                    <div class="predicted_answer col-sm-6">
+                        <h2 id="prediction_result"></h2>
+                        <p id="confidence"></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="img/images/profile/image.jpg" alt>
+            </div>
+
+            <div class="about-content">
+                <h2 class="heading">Just one thing: <span>THINK BIG</span>
+                </h2>
+                <h3><span>Tell me a number: </span>I'll tell you a bigger
+                    one</h3>
+
+                <!-- Visible text -->
+                <p id="short-text">
+                    Since I was little my great passion was numbers: when I went
+                    to kindergarten I was already counting up to very large
+                    numbers. Probably even at that age the market capitalization
+                    of NVDA in June 2024 would not have impressed me that much
+                    (but if I think that we're talking about dollars, yes).
+                    Then, as I grew up, my schoolmates also learned to count and
+                    there was always a game that no one could beat me in: the
+                    game in which the one who said the biggest number won.<br>
+                </p>
+
+                <!-- Unvisible text -->
+                <p id="full-text" style="display: none;">
+                    In high school I fell in love with physics, which for
+                    me is nothing more than mathematics that interfaces with the
+                    world in order to create models that better describe it.<br>
+                    Then at the end of high school thhe AI ​​boom
+                    explodes and I meet a physicist who introduces me to this
+                    new world: my eyes light up and I immediately glimpse its
+                    great potential.<br>
+                    To choose my future studies I thought about my three big
+                    goals, or what I would have liked to do thanks to the skills
+                    I would have acquired: <br>INNOVATE, INNOVATE and INNOVATE
+                    again.<br>
+                    And here I am, currently a second-year student at Sapienza
+                    University in Rome enrolled in two degree courses at the
+                    same time (yes, it is possible):<br>
+                    🔵 <b>Applied Computer Science and Artificial
+                        Intelligence</b><br>
+                    🔵 <b>Energy Engineering</b><br>
+                    Thanks to INNOVATION I want to solve problems (such as
+                    climate change) and invent new things that simplify our
+                    lives and make them more beautiful.<br>
+                    I don't see a field in
+                    which AI can't be used to make a difference and I can't wait
+                    to be able to do it..</p>
+            </p>
+
+            <!-- Bottone per Read More -->
+            <div class="btn-group">
+                <a href="javascript:void(0);" id="read-more-btn" class="btn"
+                    onclick="toggleText()">Read More</a>
+
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+
+        <div class="projects-box">
+
+            <div class="project-card">
+                <img src="img/images/projects/project1.png" alt>
+
+                <h3>TOMBOLA</h3>
+
+                <p>You no longer have any excuses not to play bingo next New
+                    Year's Eve! It's free, it's safe and very light! Good
+                    fun!</p>
+                <a href="https://github.com/matteoprogramming/tombola"
+                    class="btn">See Project</a>
+            </div>
+
+            <div class="project-card">
+                <img src="img/images/projects/project2.png" alt>
+
+                <h3>PDF SCORE EXTRACTOR</h3>
+
+                <p>If you are a musician you want the sheet music you found
+                    in a YT video, NO PROBLEM! feed it to this script and it
+                    will give you the ready-made pdf score!</p>
+                <a
+                    href="https://github.com/matteoprogramming/video_score_pdf_extractor"
+                    class="btn">See Project</a>
+            </div>
+
+            <div class="project-card">
+                <img src="img/images/projects/project3.png" alt>
+
+                <h3>SLIDES EXTRACTOR</h3>
+
+                <p>If your professor is so lazy that he doesn't give you the
+                    slides and you are so lazy that you don't take notes,
+                    this slides extractor is for you!</p>
+                <a
+                    href="https://github.com/matteoprogramming/slides_extractor"
+                    class="btn">See Project</a>
+            </div>
+        </section>
+        <section class="skills" id="skills">
+            <h2 class="heading">Skills</h2>
+            <div class="skills-container">
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                            alt="linux logo" />
+                        <h4>Linux</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="python logo" />
+                        <h4>Python</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                            alt="java logo" />
+                        <h4>Java</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                            alt="tensorflow logo" />
+                        <h4>Tensorflow</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg"
+                            alt="keras logo" />
+                        <h4>Keras</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                            alt="pytorch logo" />
+                        <h4>PyTorch</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"
+                            alt="pytorch logo" />
+                        <h4>Scikit-learn</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                            alt="numpy logo" />
+                        <h4>Numpy</h4>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                            alt="pandas logo" />
+                        <h4>Pandas</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
+                            alt="matplotlib logo" />
+                        <h4>Matplotlib</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+                            alt="opencv logo" />
+                        <h4>Opencv</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                            alt="c logo" />
+                        <h4>C</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="html5 logo" />
+                        <h4>HTML5</h4>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                            alt="css3 logo" />
+                        <h4>CSS</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="Javascript logo" />
+                        <h4>Javascript</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+                            alt="sqlite logo" />
+                        <h4>Sqlite</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                            alt="mysql logo" />
+                        <h4>MySQL</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
+                            alt="css3 logo" />
+                        <h4>Jupyter</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                            alt="docker logo" />
+                        <h4>Docker</h4>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-info">
+                        <img class="skills-img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                            alt="git logo" />
+                        <h4>Git</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="certifications" id="certifications">
+            <h2 class="heading"><br></h2>
+            <h2 class="heading">Certifications <span>Achieved</span></h2>
+
+            <div class="certification-box">
+                <a href="https://www.coursera.org/account/accomplishments/professional-cert/A7V6R8KU1FZ2"><img src="img/images/certifications/cert_ibm.png"
+                    alt="IBM Certification" class="certification-img"></a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me</span></h2>
+
+            <form id="contact-form" autocomplete="off">
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="text" name="from_name"
+                            placeholder="Full Name" required>
+                        <input type="email" name="email_id" placeholder="Email"
+                            required>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="tel" name="user_phone"
+                            placeholder="Phone Number">
+                        <input type="text" name="subject" placeholder="Subject">
+                    </div>
+                </div>
+                <div class="input-group-2">
+                    <textarea name="message" cols="30" rows="10"
+                        placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Send Message" class="btn">
+                </div>
+            </form>
+            <p id="confirmation-message" class="confirmation-message"></p>
+
+        </section>
+
+        <footer class="footer">
+            <div class="social">
+                <div class="social-icons">
+                    <a href="https://github.com/matteoprogramming">
+                        <i class="bx bxl-github"></i>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/matteo-bernardi-501a5b306/">
+                        <i class="bx bxl-linkedin-square">
+                        </i>
+                    </a>
+                    <a href="https://www.youtube.com/@Matteo_Bernardi">
+                        <i class="bx bxl-youtube">
+                        </i>
+                    </a>
+                    <a href="https://instagram.com/matteobernardiofficial">
+                        <i class="bx bxl-instagram">
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#certifications">Certifications</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+            <p class="copyright">
+                © Matteo Bernardi | All rights reserved
+            </p>
+        </footer>
+
+        <script src="script.js"></script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+  emailjs.init('3pClEjDYxHZSODaIW')
+</script>
+    </body>
+</html>
