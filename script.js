@@ -181,6 +181,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault();
 
     btn.value = 'Sending...';
+    btn.disabled = true; // Disabilita il pulsante
     confirmationMessage.style.visibility = 'hidden'; 
 
     const serviceID = 'service_t2m491c';
@@ -188,11 +189,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
     emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
-            btn.value = 'Send Message'; 
+            btn.value = 'Message Sent'; 
             confirmationMessage.textContent = 'Message sent successfully!'; 
             confirmationMessage.style.visibility = 'visible';
         }, (err) => {
             btn.value = 'Send Message';
+            btn.disabled = false; // Riabilita il pulsante in caso di errore
             confirmationMessage.textContent = 'Error: Message not sent. Please try again.';
             confirmationMessage.style.visibility = 'visible'; 
         });
