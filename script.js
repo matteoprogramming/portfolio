@@ -176,26 +176,47 @@ function toggleText() {
 
 const btn = document.querySelector('.btn');
 const confirmationMessage = document.getElementById('confirmation-message');
+let canSend = true;
+const timeoutDuration = 60000;
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    btn.value = 'Sending...';
-    btn.disabled = true; // Disabilita il pulsante
-    confirmationMessage.style.visibility = 'hidden'; 
+    if (!canSend) {
+        confirmationMessage.textContent = 'Please wait before sending another message.';
+        confirmationMessage.style.color = 'red';
+        confirmationMessage.style.visibility = 'visible';
+        return;
+    }
 
-    const serviceID = 'service_t2m491c';
+
+    btn.value = 'Sending...';
+    btn.disabled = true; 
+    confirmationMessage.style.visibility = 'hidden';
+
+    const serviceID = 'service_u6oju58';
     const templateID = 'template_n53k175';
 
     emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
-            btn.value = 'Message Sent'; 
-            confirmationMessage.textContent = 'Message sent successfully!'; 
+            btn.value = 'Message Sent';
+            confirmationMessage.textContent = 'Message sent successfully!';
+            confirmationMessage.style.color = 'blue';
             confirmationMessage.style.visibility = 'visible';
+
+            canSend = false;
+
+            setTimeout(() => {
+                btn.value = 'Send Message';
+                btn.disabled = false;
+                canSend = true; 
+            }, timeoutDuration);
+
         }, (err) => {
             btn.value = 'Send Message';
-            btn.disabled = false; // Riabilita il pulsante in caso di errore
+            btn.disabled = false;
             confirmationMessage.textContent = 'Error: Message not sent. Please try again.';
-            confirmationMessage.style.visibility = 'visible'; 
+            confirmationMessage.style.color = 'red';
+            confirmationMessage.style.visibility = 'visible';
         });
 });
